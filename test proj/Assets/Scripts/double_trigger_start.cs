@@ -2,22 +2,25 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(SteamVR_TrackedObject))]
-public class double_trigger_start : MonoBehaviour {
+public class double_trigger_start : MonoBehaviour
+{
+ 
+    // Use this for initialization
+    void Awake()
+    {
 
-	SteamVR_Controller.Device left_controller;
-	SteamVR_Controller.Device right_controller;
-	// Use this for initialization
-	void Awake () {
-		left_controller = SteamVR_Controller.Input (1);
-		right_controller = SteamVR_Controller.Input (2);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (left_controller.GetPressDown (SteamVR_Controller.ButtonMask.Trigger) && right_controller.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-			Debug.Log ("Both triggers are being held down.");
-			SceneManager.LoadScene (1);
-		}
-	}
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        SteamVR_Controller.Device left = SteamVR_Controller.Input(3);
+        SteamVR_Controller.Device right = SteamVR_Controller.Input(4);
+
+        if (left.GetPress(SteamVR_Controller.ButtonMask.Trigger) && right.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
+        {
+            Debug.Log("both triggers down");
+            SceneManager.LoadScene(1);
+        }
+    }
 }
