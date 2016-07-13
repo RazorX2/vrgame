@@ -242,6 +242,53 @@ ModelImporter:
     4300088: Plane_003
     4300090: Plane_002
     4300092: Plane
+    6400000: Cube
+    6400002: Plane
+    6400004: Plane_001
+    6400006: Plane_002
+    6400008: Plane_003
+    6400010: Plane_004
+    6400012: Plane_005
+    6400014: Plane_006
+    6400016: Plane_007
+    6400018: Plane_008
+    6400020: Plane_009
+    6400022: Plane_010
+    6400024: Plane_011
+    6400026: Plane_012
+    6400028: Plane_013
+    6400030: Plane_014
+    6400032: Plane_015
+    6400034: Plane_016
+    6400036: Plane_017
+    6400038: Plane_018
+    6400040: Plane_019
+    6400042: Plane_020
+    6400044: Plane_021
+    6400046: Plane_022
+    6400048: Plane_023
+    6400050: Plane_024
+    6400052: Plane_025
+    6400054: Plane_026
+    6400056: Plane_027
+    6400058: Plane_028
+    6400060: Plane_029
+    6400062: Plane_030
+    6400064: Plane_031
+    6400066: Plane_032
+    6400068: Plane_033
+    6400070: Plane_034
+    6400072: Plane_035
+    6400074: Plane_036
+    6400076: Plane_037
+    6400078: Plane_038
+    6400080: Plane_039
+    6400082: Plane_040
+    6400084: Plane_041
+    6400086: Plane_042
+    6400088: Plane_043
+    6400090: Plane_044
+    6400092: Plane_045
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -270,7 +317,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -284,7 +331,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 45
     normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1

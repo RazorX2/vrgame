@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\double_menu_end.cs" />
      <Compile Include="Assets\Scripts\double_trigger_start.cs" />
      <Compile Include="Assets\Scripts\right_trigger_test.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
