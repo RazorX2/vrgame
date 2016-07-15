@@ -10,7 +10,7 @@ var cc: CharacterController; // The player
 function Start() {}
 
 function Update() {
-    while (true) {
+    {
         var distance: float;
         distance = Vector3.Distance(cc.transform.position, GetComponent. < Rigidbody > ().transform.position);
 
@@ -43,6 +43,7 @@ function Update() {
         }
 
         if (transform.position.y < .1 && justShot) {
+            justShot = false;
             GetComponent. < Rigidbody > ().angularVelocity = Vector3.zero;
             GetComponent. < Rigidbody > ().velocity = Vector3.zero;
             GetComponent. < Rigidbody > ().useGravity = false; // reset the justShot boolean, if the sphere is far enough
