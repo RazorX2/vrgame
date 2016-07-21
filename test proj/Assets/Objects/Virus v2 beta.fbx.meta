@@ -234,6 +234,12 @@ ModelImporter:
     4300016: Torus.001
     4300018: Torus
     4300020: Plane
+    6400000: Plane
+    6400002: Plane.001
+    6400004: Torus
+    6400006: Torus.001
+    6400008: Torus.002
+    6400010: Torus.003
     7400000: Armature.024|Armature.002Action.000
     7400002: Armature.002|Armature.002Action.001
     7400004: Armature.001|Armature.001Action.001
@@ -1207,7 +1213,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

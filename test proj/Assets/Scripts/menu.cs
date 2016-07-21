@@ -4,13 +4,11 @@ using System.Collections;
 public class menu : MonoBehaviour {
 	public bool paused;
 	private GameObject menuscreen;
-	private Animation[] animations;
 
 	void Start () {
 		paused = false;
 		menuscreen = GameObject.FindGameObjectWithTag ("Menu");
 		menuscreen.SetActive (false);
-		animations = GetComponents<Animation> ();
 	}
 	
 	// Toggles pause menu and world freeze on either controller's menu press.

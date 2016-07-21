@@ -52,6 +52,8 @@
      <Compile Include="Assets\Scripts\mesh_collider_for_objects.cs" />
      <Compile Include="Assets\Scripts\movetest.cs" />
      <Compile Include="Assets\Scripts\right_trigger_test.cs" />
+     <Compile Include="Assets\Scripts\virus_spawn.cs" />
+     <Compile Include="Assets\Scripts\virus_tracking.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />

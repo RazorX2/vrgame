@@ -4,16 +4,29 @@ using System;
 
 public class mesh_collider_for_objects : MonoBehaviour {
 
-	// Use this for initialization
-	void Awake () {
-		Debug.Log (transform.childCount);
+	// generates colliders for every subobject on start
+	void Start () {
+//		Debug.Log (transform.childCount);
 		foreach (Transform child in transform) {
 			try {
-				Mesh mesh = child.gameObject.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+				Mesh mesh = new Mesh();
+				try{
+					mesh = child.gameObject.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+				} catch(Exception e){
+//					Debug.Log(child.name + "is mesh filter");
+				}
+				try{
+					mesh = child.gameObject.GetComponent<MeshFilter>().sharedMesh;
+				} catch(Exception e){
+//					Debug.Log(child.name + "is skinned mesh");
+				}
+				if(mesh.vertexCount < 1){
+					continue;
+				}
 				child.gameObject.AddComponent<MeshCollider>().sharedMesh = mesh;
 				child.GetComponent<MeshCollider>().convex = true;
 			} catch (Exception e) {
-				Debug.Log ("no mesh in " + child.name);
+//				Debug.Log ("no mesh in " + child.name);
 			}
 		}
 	}

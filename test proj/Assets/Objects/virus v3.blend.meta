@@ -196,6 +196,16 @@ ModelImporter:
     4300024: Torus_001
     4300026: Torus
     4300028: Plane
+    6400000: Cube
+    6400002: Cube_001
+    6400004: Cube_002
+    6400006: Cube_003
+    6400008: Plane
+    6400010: Plane_001
+    6400012: Torus
+    6400014: Torus_001
+    6400016: Torus_002
+    6400018: Torus_003
     7400000: Default Take
     9500000: //RootNode
     13700000: Cylinder
@@ -229,7 +239,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
