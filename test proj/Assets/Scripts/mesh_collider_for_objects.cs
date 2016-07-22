@@ -24,7 +24,7 @@ public class mesh_collider_for_objects : MonoBehaviour {
 					continue;
 				}
 				child.gameObject.AddComponent<MeshCollider>().sharedMesh = mesh;
-				child.GetComponent<MeshCollider>().convex = true;
+//				child.GetComponent<MeshCollider>().convex = true;
 			} catch (Exception e) {
 //				Debug.Log ("no mesh in " + child.name);
 			}

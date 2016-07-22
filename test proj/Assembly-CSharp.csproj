@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\ParticaleAnimator.cs" />
      <Compile Include="Assets\Scripts\double_menu_end.cs" />
      <Compile Include="Assets\Scripts\double_trigger_start.cs" />
+     <Compile Include="Assets\Scripts\kamikaze.cs" />
      <Compile Include="Assets\Scripts\menu.cs" />
      <Compile Include="Assets\Scripts\mesh_collider_for_objects.cs" />
      <Compile Include="Assets\Scripts\movetest.cs" />
