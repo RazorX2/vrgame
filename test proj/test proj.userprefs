@@ -1,8 +1,7 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\kamikaze.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\throw_physics.cs">
     <Files>
-      <File FileName="Assets\Scripts\kamikaze.cs" Line="11" Column="33" />
       <File FileName="Assets\Scripts\virus_tracking.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\mesh_collider_for_objects.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\menu.cs" Line="1" Column="1" />
@@ -10,7 +9,26 @@
       <File FileName="Assets\SteamVR\readme.txt" Line="1" Column="1" />
       <File FileName="Assets\SteamVR\Scripts\SteamVR_PlayArea.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\virus_spawn.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\throw_physics.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="test proj" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="throw_physics.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="test proj" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
