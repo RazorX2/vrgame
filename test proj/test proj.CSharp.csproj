@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ParticaleAnimator.cs" />
+    <Compile Include="Assets\Scripts\control.cs" />
     <Compile Include="Assets\Scripts\double_menu_end.cs" />
     <Compile Include="Assets\Scripts\double_trigger_start.cs" />
     <Compile Include="Assets\Scripts\kamikaze.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\mesh_collider_for_objects.cs" />
     <Compile Include="Assets\Scripts\movetest.cs" />
     <Compile Include="Assets\Scripts\right_trigger_test.cs" />
+    <Compile Include="Assets\Scripts\throw_physics.cs" />
     <Compile Include="Assets\Scripts\virus_spawn.cs" />
     <Compile Include="Assets\Scripts\virus_tracking.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />

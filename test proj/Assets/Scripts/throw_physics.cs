@@ -19,8 +19,10 @@ public class throw_physics : MonoBehaviour {
 	void OnCollisionStay(Collision c){		// move object to controller
 		if (c.gameObject.GetComponent<Rigidbody>() != null) {		
 			Rigidbody obj = c.gameObject.GetComponent<Rigidbody>();
+            Debug.Log("In Rigidbody");
 
 			if (controller.GetPress (touchButton) && controller.GetPress (triggerButton) && !grabbed) {
+                Debug.Log("Grabbed");
 				Vector3 deltaPosition = c.transform.position - transform.position;
 				obj.velocity = deltaPosition * vMultiplier * Time.fixedDeltaTime;
 				grabbed = true;
@@ -36,6 +38,15 @@ public class throw_physics : MonoBehaviour {
 		pastPositions[2] = pastPositions[1];
 		pastPositions [1] = pastPositions [0];
 		pastPositions [0] = transform.position;
+
+        if(controller.GetPress(touchButton))
+        {
+            Debug.Log("touch pressed");
+        }
+        if (controller.GetPress(triggerButton))
+        {
+            Debug.Log("trigger pressed");
+        }
 	}
 
 	public Vector3 GetAveragedVelocity(Vector3[] p){
