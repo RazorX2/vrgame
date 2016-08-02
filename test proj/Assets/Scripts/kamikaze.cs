@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class kamikaze : MonoBehaviour {
-
+    public int power;
 	// Use this for initialization
 	void Start () {
 
@@ -10,7 +10,9 @@ public class kamikaze : MonoBehaviour {
 
 	void OnCollisionEnter(Collision c){		// if an enemy collides with me, it dies.
 		if(c.gameObject.tag == "Enemy"){
-			Destroy (c.gameObject);
+            if (c.gameObject.GetComponent<Enemy>().hit(power) > 0) ;
+            else
+                Destroy(c.gameObject);
 		}
 	}
 }
