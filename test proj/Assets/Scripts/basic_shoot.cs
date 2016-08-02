@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class basic_shoot : MonoBehaviour {
 	private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger; //Instantiate the triggerbutton
@@ -9,7 +10,7 @@ public class basic_shoot : MonoBehaviour {
 	public GameObject projectile;
 	public float multiplier;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		trackedObj = GetComponent<SteamVR_TrackedObject> ();
 		projectile = GameObject.FindGameObjectWithTag ("Weapon");
 	}
@@ -19,7 +20,7 @@ public class basic_shoot : MonoBehaviour {
 		if (controller.GetPressDown (triggerButton)) {
 			GameObject razor = Instantiate<GameObject> (projectile);
 			razor.transform.position = trackedObj.gameObject.transform.position;
-			razor.transform.position.rotation = trackedObj.gameObject.transform.rotation;
+			razor.transform.rotation = trackedObj.gameObject.transform.rotation;
 			Rigidbody razorbody = razor.GetComponent<Rigidbody> ();
 			razorbody.AddForce (transform.forward * multiplier);
 			razorbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;

@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ParticaleAnimator.cs" />
+    <Compile Include="Assets\Scripts\basic_shoot.cs" />
     <Compile Include="Assets\Scripts\control.cs" />
     <Compile Include="Assets\Scripts\double_menu_end.cs" />
     <Compile Include="Assets\Scripts\double_trigger_start.cs" />
