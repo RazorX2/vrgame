@@ -4,7 +4,7 @@ using System.Collections;
 public class throw_physics : MonoBehaviour {
 	private Valve.VR.EVRButtonId touchButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad; //Instantiate the touchpad
 	private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger; //Instantiate the triggerbutton
-	private int vMultiplier = 100; // how fast objects follow the controller
+	private float vMultiplier = 100f; // how fast objects follow the controller
 	private bool grabbed = false;
 	private Vector3[] pastPositions = {Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero};
 
@@ -14,19 +14,22 @@ public class throw_physics : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision c){		// trigger haptic feedback
+        OnCollisionStay(c);
 	}
 
 	void OnCollisionStay(Collision c){		// move object to controller
-		if (c.gameObject.GetComponent<Rigidbody>() != null) {		
+        Debug.Log("Collision Detected");
+		if (c.gameObject.GetComponent<Rigidbody>() != null && c.gameObject.tag == "Weapon") {		
 			Rigidbody obj = c.gameObject.GetComponent<Rigidbody>();
             Debug.Log("In Rigidbody");
 
-			if (controller.GetPress (touchButton) && controller.GetPress (triggerButton) && !grabbed) {
+			if (controller.GetPress(touchButton) && controller.GetPress (triggerButton)) {
                 Debug.Log("Grabbed");
 				Vector3 deltaPosition = c.transform.position - transform.position;
 				obj.velocity = deltaPosition * vMultiplier * Time.fixedDeltaTime;
 				grabbed = true;
 			} else if (grabbed) {
+                Debug.Log("Let Go");
 				grabbed = false;
 				obj.velocity = GetAveragedVelocity (pastPositions);
 			}
@@ -37,16 +40,7 @@ public class throw_physics : MonoBehaviour {
 		pastPositions[3] = pastPositions[2];
 		pastPositions[2] = pastPositions[1];
 		pastPositions [1] = pastPositions [0];
-		pastPositions [0] = transform.position;
-
-        if(controller.GetPress(touchButton))
-        {
-            Debug.Log("touch pressed");
-        }
-        if (controller.GetPress(triggerButton))
-        {
-            Debug.Log("trigger pressed");
-        }
+        pastPositions[0] = transform.position;
 	}
 
 	public Vector3 GetAveragedVelocity(Vector3[] p){
