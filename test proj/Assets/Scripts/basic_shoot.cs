@@ -4,14 +4,12 @@ using System.Collections.Generic;
 
 public class basic_shoot : MonoBehaviour {
 	private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger; //Instantiate the triggerbutton
-	private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
-	private SteamVR_TrackedObject trackedObj;
+	private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)(gameObject.GetComponent<SteamVR_TrackedObject>().index)); } }
 
 	public GameObject projectile;
 	public float multiplier;
 	// Use this for initialization
 	void Awake () {
-		trackedObj = GetComponent<SteamVR_TrackedObject> ();
 		projectile = GameObject.FindGameObjectWithTag ("Weapon");
 	}
 	
@@ -19,10 +17,10 @@ public class basic_shoot : MonoBehaviour {
 	void Update () {
 		if (controller.GetPressDown (triggerButton)) {
 			GameObject razor = Instantiate<GameObject> (projectile);
-			razor.transform.position = trackedObj.gameObject.transform.position;
-			razor.transform.rotation = trackedObj.gameObject.transform.rotation;
+			razor.transform.position = transform.position;
+            razor.transform.rotation = transform.rotation * Quaternion.AngleAxis(-90f, Vector3.right);
 			Rigidbody razorbody = razor.GetComponent<Rigidbody> ();
-			razorbody.AddForce (transform.forward * multiplier);
+			razorbody.velocity = transform.forward * multiplier;
 			razorbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 		}
 	}
