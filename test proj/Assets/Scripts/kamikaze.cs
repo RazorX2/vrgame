@@ -15,6 +15,13 @@ public class kamikaze : MonoBehaviour {
             Debug.Log("" + health);
             if (health <= 0)
                 Destroy(c.gameObject);
-		}
+            Destroy(transform.gameObject);
+        }
+        
 	}
+    void Update()
+    {
+        if (transform.position.y < 1)
+            Destroy(transform.gameObject);
+    }
 }
