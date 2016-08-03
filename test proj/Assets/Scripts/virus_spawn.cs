@@ -19,7 +19,7 @@ public class virus_spawn : MonoBehaviour {
 	IEnumerator spawnViruses(float delay, Vector3 position, Quaternion rotation){
 		while (true) {
 			GameObject nextvirus = Instantiate<GameObject> (virus);
-			nextvirus.transform.position = position;
+			nextvirus.transform.position = Vector3.Scale(position,(Vector3.right+Vector3.forward));
 			nextvirus.transform.rotation = rotation;
 			nextvirus.AddComponent<Rigidbody> ();
 			nextvirus.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;

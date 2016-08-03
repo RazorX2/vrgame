@@ -21,7 +21,7 @@ public class kamikaze : MonoBehaviour {
 	}
     void Update()
     {
-        if (transform.position.y < 1)
-            Destroy(transform.gameObject);
+        //if (transform.position.y < 1)
+            //Destroy(transform.gameObject);
     }
 }
