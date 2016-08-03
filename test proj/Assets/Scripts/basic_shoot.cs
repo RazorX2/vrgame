@@ -6,7 +6,7 @@ public class basic_shoot : MonoBehaviour {
 	private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger; //Instantiate the triggerbutton
 	private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)(gameObject.GetComponent<SteamVR_TrackedObject>().index)); } }
 
-	public GameObject projectile;
+	private GameObject projectile;
 	public float multiplier;
 	// Use this for initialization
 	void Awake () {
