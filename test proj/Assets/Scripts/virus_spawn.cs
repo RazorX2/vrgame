@@ -11,7 +11,6 @@ public class virus_spawn : MonoBehaviour {
 	}
 
 	IEnumerator activatePoints(){
-        Debug.Log(transform);
 		foreach (Transform child in transform) {
 			StartCoroutine (spawnViruses (delay, child.position, child.rotation));
 			yield return new WaitForSeconds (delay/transform.childCount);
@@ -33,8 +32,4 @@ public class virus_spawn : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void TurnOff()
-    {
-        this.enabled = false;
-    }
 }
