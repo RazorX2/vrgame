@@ -1,32 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-<<<<<<< HEAD
 public class Enemy : MonoBehaviour
 {
     public int power,maxhealth,speed;
     private int health;
-=======
-public class Enemy : MonoBehaviour {
-    private int health,maxhealth;
->>>>>>> 7391e24f4deb553b360f218544043dac178ad469
     public int getHealth { get { return health; } }
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         maxhealth = 100;
         health = maxhealth;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     public int hit(int damage)
     {
         health -= damage;
         return health;
     }
-<<<<<<< HEAD
     void OnCollisionEnter(Collision c)
     {
         Debug.Log(c.gameObject.tag);
@@ -36,6 +33,4 @@ public class Enemy : MonoBehaviour {
             
         }
     }
-=======
->>>>>>> 7391e24f4deb553b360f218544043dac178ad469
 }
