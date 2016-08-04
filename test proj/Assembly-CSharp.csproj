@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\throw_physics.cs" />
      <Compile Include="Assets\Scripts\virus_spawn.cs" />
      <Compile Include="Assets\Scripts\virus_tracking.cs" />
+     <Compile Include="Assets\Scripts\weapon_kill.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
