@@ -24,4 +24,8 @@ public class basic_shoot : MonoBehaviour {
 			razorbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 		}
 	}
+    public void TurnOff()
+    {
+        this.enabled = false;
+    }
 }

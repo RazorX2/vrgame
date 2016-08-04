@@ -31,4 +31,8 @@ public class virus_spawn : MonoBehaviour {
 	void Update () {
 		
 	}
+    public void TurnOff()
+    {
+        this.enabled = false;
+    }
 }

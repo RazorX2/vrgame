@@ -4,6 +4,7 @@ using System.Collections;
 public class kamikaze : MonoBehaviour {
     public int power;
     private int health;
+    public GameObject Player;
 	// Use this for initialization
 	void Start () {
 
@@ -14,7 +15,10 @@ public class kamikaze : MonoBehaviour {
             health = c.gameObject.GetComponent<Enemy>().hit(power);
             Debug.Log("" + health);
             if (health <= 0)
+            {
+                Player.GetComponent<PlayerChar>().updateKills();
                 Destroy(c.gameObject);
+            }
             Destroy(transform.gameObject);
         }
         
