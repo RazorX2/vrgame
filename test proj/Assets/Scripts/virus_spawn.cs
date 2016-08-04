@@ -12,7 +12,7 @@ public class virus_spawn : MonoBehaviour {
 	IEnumerator activatePoints(){
 		foreach (Transform child in transform) {
 			StartCoroutine (spawnViruses (delay, child.position, child.rotation));
-			yield return new WaitForSeconds (1f);
+			yield return new WaitForSeconds (delay/transform.childCount);
 		}
 	}
 
