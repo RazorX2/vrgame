@@ -12,13 +12,13 @@ public class virus_spawn : MonoBehaviour {
 		StartCoroutine(activatePoints());
         enemies = new GameObject[] { enemy1, enemy2 };
         rnd = new Random();
-        
+
 	}
 
 	IEnumerator activatePoints(){
         Debug.Log("Type of child array"+transform.GetType());
 		foreach (Transform child in transform) {
-            Debug.Log("random Enemy:"+rnd.Range((float)0,(float)2.0));
+            //Debug.Log("random Enemy:"+rnd.Range((float)0,(float)2.0));
             StartCoroutine (spawnViruses(delay, child.position, child.rotation, enemy2  )    );
 			yield return new WaitForSeconds (delay/transform.childCount);
 		}
@@ -37,7 +37,7 @@ public class virus_spawn : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
     public void TurnOff()
     {

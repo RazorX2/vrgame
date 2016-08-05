@@ -21,7 +21,10 @@ public class kamikaze : MonoBehaviour {
             }
             Destroy(transform.gameObject);
         }
-        
+        if(c.gameObject.tag == "plan"){
+            Destroy(this.gameObject);
+        }
+
 	}
     void Update()
     {
