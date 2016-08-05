@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 619456550bc4b8d4e978d32d9269e7d1
-timeCreated: 1470335602
+guid: 785e487020a8b5a4c92cf28eb007b8ef
+timeCreated: 1470419844
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -187,7 +187,115 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 3
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Circle1
+        weight: 1
+      - path: Circle2
+        weight: 1
+      - path: Cone
+        weight: 1
+      - path: Cone_001
+        weight: 1
+      - path: Cone_002
+        weight: 1
+      - path: Cone_003
+        weight: 1
+      - path: Cone_004
+        weight: 1
+      - path: Cone_005
+        weight: 1
+      - path: Cone_006
+        weight: 1
+      - path: Cone_007
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube_001
+        weight: 1
+      - path: Cube_001/Armature
+        weight: 1
+      - path: Cube_001/Armature/ArmL_0
+        weight: 1
+      - path: Cube_001/Armature/ArmL_0/Hand_L_0
+        weight: 1
+      - path: Cube_001/Armature_001
+        weight: 1
+      - path: Cube_001/Armature_001/ArmL
+        weight: 1
+      - path: Cube_001/Armature_001/ArmL/Hand_L
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      - path: Cylinder_002
+        weight: 1
+      - path: Cylinder_003
+        weight: 1
+      - path: Cylinder_004
+        weight: 1
+      - path: Cylinder_005
+        weight: 1
+      - path: Hull
+        weight: 1
+      - path: Sphere
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus_001
+        weight: 1
+      - path: Torus_002
+        weight: 1
+      - path: Torus_003
+        weight: 1
+      - path: Torus_004
+        weight: 1
+      - path: Torus_005
+        weight: 1
+      - path: Torus_006
+        weight: 1
+      - path: Torus_007
+        weight: 1
+      - path: Torus_008
+        weight: 1
+      - path: Track1
+        weight: 1
+      - path: Track2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

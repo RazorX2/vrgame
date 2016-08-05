@@ -23,7 +23,7 @@ public class PlayerChar : MonoBehaviour {
         //Debug.Log("Health: " + health);
         if (health <= 0)
         {
-            Debug.Log("You Died");
+            //Debug.Log("You Died");
             GameObject[] spawner = GameObject.FindGameObjectsWithTag("Spawner");
             //Debug.Log(spawner);
             GameObject[] shooters = GameObject.FindGameObjectsWithTag("Shooter");
@@ -35,11 +35,11 @@ public class PlayerChar : MonoBehaviour {
                 spawner[i].GetComponent<virus_spawn>().TurnOff();
             for (int i = 0; i < enemies.Length; i++)
                 Destroy(enemies[i]);
-            Losingscreen.text = "You Died\nEnemies Killed:" + killCount"\nPress both triggers to go to home screen";
+            Losingscreen.text = "You Died\nEnemies Killed:" + killCount+"\nPress both triggers to go to home screen";
             if (left.GetPress(SteamVR_Controller.ButtonMask.Trigger) && right.GetPress(SteamVR_Controller.ButtonMask.Trigger))
             {
                 Debug.Log("both triggers down");
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(0);
             }
         }
     }

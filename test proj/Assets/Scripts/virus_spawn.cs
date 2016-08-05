@@ -7,19 +7,38 @@ public class virus_spawn : MonoBehaviour {
     private int speed;
     private Random rnd;
     private GameObject[] enemies;
-
+    private Transform[] children;
+    private int rperson;
+    private GameObject enemy;
     void Start () {
-		StartCoroutine(activatePoints());
+        children = new Transform[4];
+        int count = 0;
         enemies = new GameObject[] { enemy1, enemy2 };
         rnd = new Random();
+        
+        foreach (Transform child in transform)
+        {
+            children[count] = child;
+            count++;
+        }
+        StartCoroutine(activatePoints());
+        
 
 	}
 
 	IEnumerator activatePoints(){
         Debug.Log("Type of child array"+transform.GetType());
-		foreach (Transform child in transform) {
-            //Debug.Log("random Enemy:"+rnd.Range((float)0,(float)2.0));
-            StartCoroutine (spawnViruses(delay, child.position, child.rotation, enemy2  )    );
+		for(int i = 0;i<4;i++) {
+            rperson = (int)(Random.value*4);
+            Transform child = children[rperson];
+            Debug.Log(rperson);
+            rperson = (int)(Random.value*10);
+            enemy = enemy1;
+            if (rperson == 1)
+                enemy = enemy2;
+            Debug.Log(rperson);
+            Debug.Log("");
+            StartCoroutine (spawnViruses(delay, child.position, child.rotation, enemy  )    );
 			yield return new WaitForSeconds (delay/transform.childCount);
 		}
 	}
