@@ -5,14 +5,27 @@ public class virus_spawn : MonoBehaviour {
 	public float delay; //time between spawns
 	public GameObject enemy; //complete virus: needs a single copy to start with.
     private int speed;
+	private int rperson;
+	private Transform[] children;
 
 	void Start () {
-		StartCoroutine(activatePoints());
+        children = new Transform[4];
+        int count = 0;
+        foreach (Transform child in transform)
+        {
+            children[count] = child;
+            count++;
+        }
+        StartCoroutine(activatePoints());
+		
 	}
 
 	IEnumerator activatePoints(){
-        Debug.Log(transform);
-		foreach (Transform child in transform) {
+        //Debug.Log(transform);
+		for(int i = 0;i<4;i++) {
+			rperson = (int)(Random.value*4);
+            //Debug.Log(rperson);
+            Transform child = children[i];
 			StartCoroutine (spawnViruses (delay, child.position, child.rotation));
 			yield return new WaitForSeconds (delay/transform.childCount);
 		}
@@ -31,7 +44,7 @@ public class virus_spawn : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
     public void TurnOff()
     {
