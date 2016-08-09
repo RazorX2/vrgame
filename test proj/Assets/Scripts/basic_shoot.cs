@@ -20,8 +20,13 @@ public class basic_shoot : MonoBehaviour {
 			razor.transform.position = transform.position;
             razor.transform.rotation = transform.rotation * Quaternion.AngleAxis(-90f, Vector3.right);
 			Rigidbody razorbody = razor.GetComponent<Rigidbody> ();
-			razorbody.velocity = transform.forward * multiplier;
+            razorbody.useGravity = true;
+			razorbody.AddForceAtPosition(transform.forward * multiplier*4,transform.position,ForceMode.Impulse);
 			razorbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 		}
 	}
+    public void TurnOff()
+    {
+        this.enabled = false;
+    }
 }
