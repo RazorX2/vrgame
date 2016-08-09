@@ -10,12 +10,11 @@ public class virus_spawn : MonoBehaviour {
     private Transform[] children;
     private int rperson;
     private GameObject enemy;
+    private int odds;
     void Start () {
         children = new Transform[4];
         int count = 0;
-        enemies = new GameObject[] { enemy1, enemy2 };
-        rnd = new Random();
-
+        odds = 1;
         foreach (Transform child in transform)
         {
             children[count] = child;
@@ -23,33 +22,42 @@ public class virus_spawn : MonoBehaviour {
         }
         StartCoroutine(activatePoints());
 	}
-
+    public void changeOdds(int x)
+    {
+        odds = x;
+    }
 	IEnumerator activatePoints(){
         Debug.Log("Type of child array"+transform.GetType());
 		for(int i = 0;i<4;i++) {
-            rperson = (int)(Random.value*4);
-            Transform child = children[rperson];
-            Debug.Log(rperson);
-            rperson = (int)(Random.value*10);
-            enemy = enemy1;
-            if (rperson == 1)
-                enemy = enemy2;
-            Debug.Log(rperson);
-            Debug.Log("");
-            StartCoroutine (spawnViruses(delay, child.position, child.rotation, enemy  )    );
+            StartCoroutine (spawnViruses(delay)    );
 			yield return new WaitForSeconds (delay/transform.childCount);
 		}
 	}
 
-	IEnumerator spawnViruses(float delay, Vector3 position, Quaternion rotation,GameObject enemy){
+	IEnumerator spawnViruses(float delay){
 		while (true) {
-			GameObject nextvirus = Instantiate<GameObject> (enemy);
-			nextvirus.transform.position = Vector3.Scale(position,(Vector3.right+Vector3.forward));
-			nextvirus.transform.rotation = rotation;
+           /*****Randomization****************/
+            rperson = (int)(Random.value * 4);
+            Transform child = children[rperson];
+            Debug.Log("point: " + rperson);
+            rperson = (int)(Random.value * 20);
+            GameObject enemy = enemy1;
+            if (rperson <= odds)
+                enemy = enemy2;
+            Debug.Log("Character:" + rperson);
+            Vector3 position = child.position;
+            Quaternion rotation = child.rotation;
+            /*****Randomization****************/
+            /*****Spawning**********************/
+            GameObject nextvirus = Instantiate<GameObject> (enemy);//creates new object
+            nextvirus.tag = "Enemy";//Tags it
+			nextvirus.transform.position = Vector3.Scale(position,(Vector3.right+Vector3.forward));//Places it at the spawnpoint
+			nextvirus.transform.rotation = rotation;//Orients it properly
 			nextvirus.AddComponent<Rigidbody> ();
 			nextvirus.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 			nextvirus.AddComponent <virus_tracking> ();
-			yield return new WaitForSeconds (delay);
+            /*****Spawning**********************/
+            yield return new WaitForSeconds (delay);
 		}
 	}
 	// Update is called once per frame
@@ -59,5 +67,9 @@ public class virus_spawn : MonoBehaviour {
     public void TurnOff()
     {
         this.enabled = false;
+    }
+    public void TurnOn()
+    {
+        this.enabled = true;
     }
 }
