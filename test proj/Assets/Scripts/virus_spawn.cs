@@ -15,15 +15,13 @@ public class virus_spawn : MonoBehaviour {
         int count = 0;
         enemies = new GameObject[] { enemy1, enemy2 };
         rnd = new Random();
-        
+
         foreach (Transform child in transform)
         {
             children[count] = child;
             count++;
         }
         StartCoroutine(activatePoints());
-        
-
 	}
 
 	IEnumerator activatePoints(){
