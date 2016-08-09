@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 785e487020a8b5a4c92cf28eb007b8ef
-timeCreated: 1470419844
-=======
-guid: 619456550bc4b8d4e978d32d9269e7d1
-timeCreated: 1470335602
->>>>>>> Andrew
-licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -192,7 +185,6 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-<<<<<<< HEAD
     clipAnimations:
     - serializedVersion: 16
       name: Default Take
@@ -302,13 +294,10 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-=======
-    clipAnimations: []
->>>>>>> Andrew
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
