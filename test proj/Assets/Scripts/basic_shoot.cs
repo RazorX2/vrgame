@@ -12,7 +12,7 @@ public class basic_shoot : MonoBehaviour {
 	void Awake () {
 		projectile = GameObject.FindGameObjectWithTag ("Weapon");
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
 		if (controller.GetPressDown (triggerButton)) {
@@ -20,13 +20,8 @@ public class basic_shoot : MonoBehaviour {
 			razor.transform.position = transform.position;
             razor.transform.rotation = transform.rotation * Quaternion.AngleAxis(-90f, Vector3.right);
 			Rigidbody razorbody = razor.GetComponent<Rigidbody> ();
-            razorbody.useGravity = true;
-			razorbody.AddForceAtPosition(transform.forward * multiplier*3,transform.position,ForceMode.Impulse);
+			razorbody.velocity = transform.forward * multiplier;
 			razorbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 		}
 	}
-    public void TurnOff()
-    {
-        this.enabled = false;
-    }
 }

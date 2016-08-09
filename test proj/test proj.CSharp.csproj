@@ -71,7 +71,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\ParticaleAnimator.cs" />
-    <Compile Include="Assets\Scripts\PlayerChar.cs" />
     <Compile Include="Assets\Scripts\basic_shoot.cs" />
     <Compile Include="Assets\Scripts\control.cs" />
     <Compile Include="Assets\Scripts\double_menu_end.cs" />
