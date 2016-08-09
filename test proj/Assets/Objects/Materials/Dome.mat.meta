@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e8be5cd6badfe394bbe7b82763035d44
 timeCreated: 1470404295
+=======
+guid: 316a07ff9043bcf4e945ec04c7a4c927
+timeCreated: 1470405499
+>>>>>>> Andrew
 licenseType: Free
 NativeFormatImporter:
   userData: 
