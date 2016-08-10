@@ -53,13 +53,15 @@ public class menu : MonoBehaviour {
 					deselect (top.gameObject);
 					top.Select ();
 					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
+                        Debug.Log("left top trigger hit in menu");
 						topLoad ();
 					}
 				} else {
 					deselect (bot.gameObject);
 					bot.Select ();
 					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-						botLoad ();
+                        Debug.Log("left bot trigger hit in menu");
+                        botLoad ();
 					}
 				}
 					
@@ -68,13 +70,15 @@ public class menu : MonoBehaviour {
 					deselect (top.gameObject);
 					top.Select ();
 					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-						topLoad ();
+                        Debug.Log("right top trigger hit in menu");
+                        topLoad ();
 					}
 				} else {
 					deselect (bot.gameObject);
 					bot.Select ();
 					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-						botLoad ();
+                        Debug.Log("right bot trigger hit in menu");
+                        botLoad ();
 					}
 				}
 			}
