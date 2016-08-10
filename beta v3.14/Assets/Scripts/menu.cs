@@ -12,8 +12,8 @@ public class menu : MonoBehaviour {
 	private EventSystem myEventSystem;
 	public Button top;
 	public Button bot;
-	public GameObject leftgo;
-	public GameObject rightgo;
+//	public GameObject leftgo;
+//	public GameObject rightgo;
 
 	void Start () {
 		paused = false;
@@ -29,14 +29,14 @@ public class menu : MonoBehaviour {
 
 		//menu on button hold, save initial controller rotation, always spawn menu in front @  2/3 height
 		if ((left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu)) && !paused) {
-			pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? leftgo.transform.rotation : rightgo.transform.rotation;
+			pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? left.transform.rot : right.transform.rot;
 			leftbutt = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? true : false;
 
 			menuscreen.SetActive (true);
 			menuscreen.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
 			GameObject controls = menuscreen.transform.Find ("controls").gameObject;
-			controls.transform.position = new Vector3(controls.transform.position.x, transform.position.y * 2f / 3, controls.transform.position.z);
-			controls.transform.rotation = Quaternion.Euler(controls.transform.rotation.x, transform.rotation.y, controls.transform.rotation.z);
+			controls.transform.position = new Vector3(transform.position.x + transform.forward.x, transform.position.y * 2f / 3, transform.position.z + transform.forward.z);
+			controls.transform.rotation = Quaternion.Euler(30, -transform.rotation.y, controls.transform.rotation.z);
 
 			Time.timeScale = 0;
 			paused = true;
@@ -49,36 +49,32 @@ public class menu : MonoBehaviour {
 //		highlight buttons using y-rotation angle of controller whose button is down
 		if (paused) {
 			if (leftbutt) {
-				if (leftgo.transform.rotation.eulerAngles.y > pauseRotation.eulerAngles.y) {
+				if (Mathf.Atan2(-left.transform.rot.eulerAngles.y, left.transform.rot.eulerAngles.x) > Mathf.Atan2(-pauseRotation.eulerAngles.y, pauseRotation.eulerAngles.x)) {
 					deselect (top.gameObject);
 					top.Select ();
 					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-                        Debug.Log("left top trigger hit in menu");
 						topLoad ();
 					}
 				} else {
 					deselect (bot.gameObject);
 					bot.Select ();
 					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-                        Debug.Log("left bot trigger hit in menu");
-                        botLoad ();
+						botLoad ();
 					}
 				}
 					
 			} else{
-				if (rightgo.transform.rotation.eulerAngles.y > pauseRotation.eulerAngles.y) {
+				if (Mathf.Atan2(-right.transform.rot.eulerAngles.y, right.transform.rot.eulerAngles.x) > Mathf.Atan2(-pauseRotation.eulerAngles.y, pauseRotation.eulerAngles.x)) {
 					deselect (top.gameObject);
 					top.Select ();
 					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-                        Debug.Log("right top trigger hit in menu");
-                        topLoad ();
+						topLoad ();
 					}
 				} else {
 					deselect (bot.gameObject);
 					bot.Select ();
 					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-                        Debug.Log("right bot trigger hit in menu");
-                        botLoad ();
+						botLoad ();
 					}
 				}
 			}
