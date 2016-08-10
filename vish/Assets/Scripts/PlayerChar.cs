@@ -17,7 +17,10 @@ public class PlayerChar : MonoBehaviour {
     private bool levelStarted;
     private float timer;
     public int currOdds;
+    public Slider healthBar;
+    public Text healthcount;
     int count;
+    private GameObject spawnr;
     // Use this for initialization
     void Start () {
         maxhealth = 100;
@@ -26,8 +29,12 @@ public class PlayerChar : MonoBehaviour {
         spawnEnd = false;
         levelEnd = false;
         levelStarted = true;
-        timer = 10;
+        timer = 60;
         count = 0;
+        spawnr = GameObject.FindGameObjectWithTag("Spawner");
+        spawnr.GetComponent<virus_spawn>().changeOdds(currOdds);
+
+
     }
 
 	// Update is called once per frame
@@ -76,6 +83,7 @@ public class PlayerChar : MonoBehaviour {
             //Debug.Log("New Level Trigger");
             Losingscreen.text = "";
             currOdds = (int)(30 - (30 - currOdds * .9));
+            spawnr.GetComponent<virus_spawn>().changeOdds(currOdds);
             GameObject[] spawner = GameObject.FindGameObjectsWithTag("Spawner");
             GameObject[] shooters = GameObject.FindGameObjectsWithTag("Shooter");
             for (int i = 0; i < shooters.Length; i++) 
@@ -128,6 +136,10 @@ public class PlayerChar : MonoBehaviour {
     public int hit(int power)
     {
         health -= power;
+        if (health < 0)
+            health = 0;
+        healthBar.value = health;
+        healthcount.text = "Health:" + health + "/100";
         return health;
     }
 }
