@@ -26,7 +26,6 @@ public class Enemy : MonoBehaviour
     }
     void OnCollisionEnter(Collision c)
     {
-        Debug.Log(c.gameObject.tag);
         if (c.gameObject.tag == "Player")
         {
             health = c.gameObject.GetComponent<PlayerChar>().hit(power);
