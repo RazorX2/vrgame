@@ -36,7 +36,7 @@ public class menu : MonoBehaviour {
 			menuscreen.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
 			GameObject controls = menuscreen.transform.Find ("controls").gameObject;
 			controls.transform.position = new Vector3(transform.position.x + transform.forward.x, transform.position.y * 2f / 3, transform.position.z + transform.forward.z);
-			controls.transform.rotation = Quaternion.Euler(30, -transform.rotation.y, controls.transform.rotation.z);
+            controls.transform.rotation = Quaternion.Euler(30, transform.rotation.eulerAngles.y, controls.transform.rotation.eulerAngles.z);
 
 			Time.timeScale = 0;
 			paused = true;
@@ -46,60 +46,58 @@ public class menu : MonoBehaviour {
 			paused = false;
 		}
 
-//		highlight buttons using y-rotation angle of controller whose button is down
-		if (paused) {
-			if (leftbutt) {
-				if (Mathf.Atan2(-left.transform.rot.eulerAngles.y, left.transform.rot.eulerAngles.x) > Mathf.Atan2(-pauseRotation.eulerAngles.y, pauseRotation.eulerAngles.x)) {
-					deselect (top.gameObject);
-					top.Select ();
-					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-						topLoad ();
-					}
-				} else {
-					deselect (bot.gameObject);
-					bot.Select ();
-					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-						botLoad ();
-					}
-				}
-					
-			} else{
-				if (Mathf.Atan2(-right.transform.rot.eulerAngles.y, right.transform.rot.eulerAngles.x) > Mathf.Atan2(-pauseRotation.eulerAngles.y, pauseRotation.eulerAngles.x)) {
-					deselect (top.gameObject);
-					top.Select ();
-					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-						topLoad ();
-					}
-				} else {
-					deselect (bot.gameObject);
-					bot.Select ();
-					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
-						botLoad ();
-					}
-				}
-			}
-		}
-		
+        //		highlight buttons using y-rotation angle of controller whose button is down
+        if (paused)
+        {
+            if (leftbutt)
+            {
+                //if (Mathf.Atan2(left.transform.rot.eulerAngles.x, left.transform.rot.eulerAngles.z) < Mathf.Atan2(pauseRotation.eulerAngles.x, pauseRotation.eulerAngles.z))
+                if (left.transform.rot.eulerAngles.x > 0 && left.transform.rot.eulerAngles.x < 90)
+                {
+                    Debug.Log("left tilted up");
+                    deselect(top.gameObject);
+                    top.Select();
+                    if (left.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+                    {
+                        botLoad();
+                    }
+                }
+                else if (left.transform.rot.eulerAngles.x > 270 && left.transform.rot.eulerAngles.x < 360)
+                {
+                    deselect(bot.gameObject);
+                    Debug.Log("left tilted down");
+                    bot.Select();
+                    if (left.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+                    {
+                        topLoad();
+                    }
+                }
 
-		//toggles menu on press
-//		if (left.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
-//		{
-//			if (paused) {
-//				Time.timeScale = 1;
-//				menuscreen.SetActive (false);
-//				paused = false;
-//			} else {
-//				menuscreen.SetActive (true);
-//				menuscreen.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
-//				Time.timeScale = 0;
-//				paused = true;
-//			}
-//		}
+            }
+            else
+            {
+                if (right.transform.rot.eulerAngles.x > 0 && right.transform.rot.eulerAngles.x < 90)
+                {
+                    Debug.Log("right tilted up");
+                    deselect(top.gameObject);
+                    top.Select();
+                    if (right.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+                    {
+                        botLoad();
+                    }
+                    else if (right.transform.rot.eulerAngles.x > 270 && right.transform.rot.eulerAngles.x < 360)
+                    {
+                        deselect(bot.gameObject);
+                        Debug.Log("right tilted down");
+                        bot.Select();
+                        if (right.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+                            topLoad();
+                    }
+
+                }
+            }
+        }
 	}
-
-//	void LateUpdate(){
-//		if(top.is
-//	}
 
 	void deselect(GameObject current){
 		if (myEventSystem.currentSelectedGameObject != current) {
@@ -109,11 +107,13 @@ public class menu : MonoBehaviour {
 
 	//what the top button does
 	void topLoad(){
-		SceneManager.LoadScene (1);
+        Debug.Log("Go to Scene");
+		SceneManager.LoadScene(1);
 	}
 
 	//what the bottom button does
 	void botLoad(){
 		Application.Quit ();
+        Debug.Log("Quit");
 	}
 }
