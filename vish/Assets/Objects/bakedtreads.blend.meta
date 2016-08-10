@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: 9025d32682732cc4080514105bec1942
+timeCreated: 1470764225
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Armature_001
+    100004: Armature_002
+    100006: Armature_003
+    100008: ArmL
+    100010: ArmL_0
+    100012: ArmL_1
+    100014: ArmL_2
+    100016: //RootNode
+    100018: Circle1
+    100020: Circle1_001
+    100022: Circle2
+    100024: Circle2_001
+    100026: Cone
+    100028: Cone_001
+    100030: Cone_002
+    100032: Cone_003
+    100034: Cone_004
+    100036: Cone_005
+    100038: Cone_006
+    100040: Cone_007
+    100042: Cone_008
+    100044: Cone_009
+    100046: Cone_010
+    100048: Cone_011
+    100050: Cone_012
+    100052: Cone_013
+    100054: Cone_014
+    100056: Cone_015
+    100058: Cube
+    100060: Cube_001
+    100062: Cube_002
+    100064: Cube_003
+    100066: Cylinder
+    100068: Cylinder_001
+    100070: Cylinder_002
+    100072: Cylinder_003
+    100074: Cylinder_004
+    100076: Cylinder_005
+    100078: Cylinder_006
+    100080: Cylinder_007
+    100082: Cylinder_008
+    100084: Cylinder_009
+    100086: Cylinder_010
+    100088: Cylinder_011
+    100090: Hand_L
+    100092: Hand_L_0
+    100094: Hand_L_1
+    100096: Hand_L_2
+    100098: Hull
+    100100: Hull_001
+    100102: Sphere
+    100104: Sphere_001
+    100106: Sphere_002
+    100108: Sphere_003
+    100110: Sphere_004
+    100112: Sphere_005
+    100114: Torus
+    100116: Torus_001
+    100118: Torus_002
+    100120: Torus_003
+    100122: Torus_004
+    100124: Torus_005
+    100126: Torus_006
+    100128: Torus_007
+    100130: Torus_008
+    100132: Torus_009
+    100134: Torus_010
+    100136: Torus_011
+    100138: Torus_012
+    100140: Torus_013
+    100142: Torus_014
+    100144: Torus_015
+    100146: Torus_016
+    100148: Torus_017
+    100150: Track1_001
+    100152: Track2_001
+    400000: Armature
+    400002: Armature_001
+    400004: Armature_002
+    400006: Armature_003
+    400008: ArmL
+    400010: ArmL_0
+    400012: ArmL_1
+    400014: ArmL_2
+    400016: //RootNode
+    400018: Circle1
+    400020: Circle1_001
+    400022: Circle2
+    400024: Circle2_001
+    400026: Cone
+    400028: Cone_001
+    400030: Cone_002
+    400032: Cone_003
+    400034: Cone_004
+    400036: Cone_005
+    400038: Cone_006
+    400040: Cone_007
+    400042: Cone_008
+    400044: Cone_009
+    400046: Cone_010
+    400048: Cone_011
+    400050: Cone_012
+    400052: Cone_013
+    400054: Cone_014
+    400056: Cone_015
+    400058: Cube
+    400060: Cube_001
+    400062: Cube_002
+    400064: Cube_003
+    400066: Cylinder
+    400068: Cylinder_001
+    400070: Cylinder_002
+    400072: Cylinder_003
+    400074: Cylinder_004
+    400076: Cylinder_005
+    400078: Cylinder_006
+    400080: Cylinder_007
+    400082: Cylinder_008
+    400084: Cylinder_009
+    400086: Cylinder_010
+    400088: Cylinder_011
+    400090: Hand_L
+    400092: Hand_L_0
+    400094: Hand_L_1
+    400096: Hand_L_2
+    400098: Hull
+    400100: Hull_001
+    400102: Sphere
+    400104: Sphere_001
+    400106: Sphere_002
+    400108: Sphere_003
+    400110: Sphere_004
+    400112: Sphere_005
+    400114: Torus
+    400116: Torus_001
+    400118: Torus_002
+    400120: Torus_003
+    400122: Torus_004
+    400124: Torus_005
+    400126: Torus_006
+    400128: Torus_007
+    400130: Torus_008
+    400132: Torus_009
+    400134: Torus_010
+    400136: Torus_011
+    400138: Torus_012
+    400140: Torus_013
+    400142: Torus_014
+    400144: Torus_015
+    400146: Torus_016
+    400148: Torus_017
+    400150: Track1_001
+    400152: Track2_001
+    2300000: Circle1
+    2300002: Circle1_001
+    2300004: Circle2
+    2300006: Circle2_001
+    2300008: Cube
+    2300010: Cube_001
+    2300012: Cube_002
+    2300014: Cube_003
+    2300016: Cylinder
+    2300018: Cylinder_001
+    2300020: Cylinder_002
+    2300022: Cylinder_003
+    2300024: Cylinder_008
+    2300026: Cylinder_009
+    2300028: Cylinder_010
+    2300030: Cylinder_011
+    2300032: Sphere
+    2300034: Sphere_001
+    2300036: Sphere_002
+    2300038: Sphere_003
+    2300040: Sphere_004
+    2300042: Sphere_005
+    2300044: Torus
+    2300046: Torus_002
+    2300048: Torus_006
+    2300050: Torus_009
+    2300052: Torus_016
+    2300054: Torus_017
+    2300056: Track1_001
+    2300058: Track2_001
+    3300000: Circle1
+    3300002: Circle1_001
+    3300004: Circle2
+    3300006: Circle2_001
+    3300008: Cube
+    3300010: Cube_001
+    3300012: Cube_002
+    3300014: Cube_003
+    3300016: Cylinder
+    3300018: Cylinder_001
+    3300020: Cylinder_002
+    3300022: Cylinder_003
+    3300024: Cylinder_008
+    3300026: Cylinder_009
+    3300028: Cylinder_010
+    3300030: Cylinder_011
+    3300032: Sphere
+    3300034: Sphere_001
+    3300036: Sphere_002
+    3300038: Sphere_003
+    3300040: Sphere_004
+    3300042: Sphere_005
+    3300044: Torus
+    3300046: Torus_002
+    3300048: Torus_006
+    3300050: Torus_009
+    3300052: Torus_016
+    3300054: Torus_017
+    3300056: Track1_001
+    3300058: Track2_001
+    4300000: Circle2_001
+    4300002: Circle1_001
+    4300004: Cylinder_010
+    4300006: Cylinder_011
+    4300008: Cylinder_008
+    4300010: Cylinder_009
+    4300012: Cube_003
+    4300014: Track1_001
+    4300016: Track2_001
+    4300018: Torus_017
+    4300020: Torus_016
+    4300022: Cube_002
+    4300024: Cylinder_007
+    4300026: Torus_015
+    4300028: Torus_014
+    4300030: Cone_015
+    4300032: Cone_014
+    4300034: Cone_013
+    4300036: Cone_012
+    4300038: Torus_013
+    4300040: Torus_012
+    4300042: Torus_011
+    4300044: Cone_011
+    4300046: Cone_010
+    4300048: Cone_009
+    4300050: Cone_008
+    4300052: Torus_010
+    4300054: Cylinder_006
+    4300056: Sphere_005
+    4300058: Sphere_004
+    4300060: Torus_009
+    4300062: Sphere_003
+    4300064: Sphere_002
+    4300066: Torus_006
+    4300068: Sphere_001
+    4300070: Sphere
+    4300072: Cube_001
+    4300074: Cylinder_004
+    4300076: Torus_008
+    4300078: Torus_005
+    4300080: Cone_007
+    4300082: Cone_006
+    4300084: Cone_005
+    4300086: Cone_004
+    4300088: Torus_003
+    4300090: Torus_007
+    4300092: Torus_004
+    4300094: Torus_001
+    4300096: Cylinder_005
+    4300098: Cone_003
+    4300100: Cone_002
+    4300102: Cone_001
+    4300104: Cone
+    4300106: Torus_002
+    4300108: Torus
+    4300110: Cube
+    4300112: Circle1
+    4300114: Circle2
+    4300116: Cylinder
+    4300118: Cylinder_001
+    4300120: Cylinder_003
+    4300122: Cylinder_002
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: Cone
+    13700002: Cone_001
+    13700004: Cone_002
+    13700006: Cone_003
+    13700008: Cone_004
+    13700010: Cone_005
+    13700012: Cone_006
+    13700014: Cone_007
+    13700016: Cone_008
+    13700018: Cone_009
+    13700020: Cone_010
+    13700022: Cone_011
+    13700024: Cone_012
+    13700026: Cone_013
+    13700028: Cone_014
+    13700030: Cone_015
+    13700032: Cylinder_004
+    13700034: Cylinder_005
+    13700036: Cylinder_006
+    13700038: Cylinder_007
+    13700040: Torus_001
+    13700042: Torus_003
+    13700044: Torus_004
+    13700046: Torus_005
+    13700048: Torus_007
+    13700050: Torus_008
+    13700052: Torus_010
+    13700054: Torus_011
+    13700056: Torus_012
+    13700058: Torus_013
+    13700060: Torus_014
+    13700062: Torus_015
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Circle1
+        weight: 1
+      - path: Circle1_001
+        weight: 1
+      - path: Circle2
+        weight: 1
+      - path: Circle2_001
+        weight: 1
+      - path: Cone
+        weight: 1
+      - path: Cone_001
+        weight: 1
+      - path: Cone_002
+        weight: 1
+      - path: Cone_003
+        weight: 1
+      - path: Cone_004
+        weight: 1
+      - path: Cone_005
+        weight: 1
+      - path: Cone_006
+        weight: 1
+      - path: Cone_007
+        weight: 1
+      - path: Cone_008
+        weight: 1
+      - path: Cone_009
+        weight: 1
+      - path: Cone_010
+        weight: 1
+      - path: Cone_011
+        weight: 1
+      - path: Cone_012
+        weight: 1
+      - path: Cone_013
+        weight: 1
+      - path: Cone_014
+        weight: 1
+      - path: Cone_015
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube_001
+        weight: 1
+      - path: Cube_001/Armature
+        weight: 1
+      - path: Cube_001/Armature/ArmL_2
+        weight: 1
+      - path: Cube_001/Armature/ArmL_2/Hand_L_2
+        weight: 1
+      - path: Cube_001/Armature_001
+        weight: 1
+      - path: Cube_001/Armature_001/ArmL_1
+        weight: 1
+      - path: Cube_001/Armature_001/ArmL_1/Hand_L_1
+        weight: 1
+      - path: Cube_002
+        weight: 1
+      - path: Cube_002/Armature_002
+        weight: 1
+      - path: Cube_002/Armature_002/ArmL_0
+        weight: 1
+      - path: Cube_002/Armature_002/ArmL_0/Hand_L_0
+        weight: 1
+      - path: Cube_002/Armature_003
+        weight: 1
+      - path: Cube_002/Armature_003/ArmL
+        weight: 1
+      - path: Cube_002/Armature_003/ArmL/Hand_L
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      - path: Cube_003/Track1_001
+        weight: 1
+      - path: Cube_003/Track2_001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      - path: Cylinder_002
+        weight: 1
+      - path: Cylinder_003
+        weight: 1
+      - path: Cylinder_004
+        weight: 1
+      - path: Cylinder_005
+        weight: 1
+      - path: Cylinder_006
+        weight: 1
+      - path: Cylinder_007
+        weight: 1
+      - path: Cylinder_008
+        weight: 1
+      - path: Cylinder_009
+        weight: 1
+      - path: Cylinder_010
+        weight: 1
+      - path: Cylinder_011
+        weight: 1
+      - path: Hull
+        weight: 1
+      - path: Hull_001
+        weight: 1
+      - path: Sphere
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_003
+        weight: 1
+      - path: Sphere_004
+        weight: 1
+      - path: Sphere_005
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus_001
+        weight: 1
+      - path: Torus_002
+        weight: 1
+      - path: Torus_003
+        weight: 1
+      - path: Torus_004
+        weight: 1
+      - path: Torus_005
+        weight: 1
+      - path: Torus_006
+        weight: 1
+      - path: Torus_007
+        weight: 1
+      - path: Torus_008
+        weight: 1
+      - path: Torus_009
+        weight: 1
+      - path: Torus_010
+        weight: 1
+      - path: Torus_011
+        weight: 1
+      - path: Torus_012
+        weight: 1
+      - path: Torus_013
+        weight: 1
+      - path: Torus_014
+        weight: 1
+      - path: Torus_015
+        weight: 1
+      - path: Torus_016
+        weight: 1
+      - path: Torus_017
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

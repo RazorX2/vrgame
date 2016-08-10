@@ -31,11 +31,13 @@ public class menu : MonoBehaviour {
 		if ((left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu)) && !paused) {
 			pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? leftgo.transform.rotation : rightgo.transform.rotation;
 			leftbutt = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? true : false;
+
 			menuscreen.SetActive (true);
 			menuscreen.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
 			GameObject controls = menuscreen.transform.Find ("controls").gameObject;
 			controls.transform.position = new Vector3(controls.transform.position.x, transform.position.y * 2f / 3, controls.transform.position.z);
 			controls.transform.rotation = Quaternion.Euler(controls.transform.rotation.x, transform.rotation.y, controls.transform.rotation.z);
+
 			Time.timeScale = 0;
 			paused = true;
 		} else if ((left.GetPressUp (SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPressUp (SteamVR_Controller.ButtonMask.ApplicationMenu)) && paused) {
@@ -48,13 +50,13 @@ public class menu : MonoBehaviour {
 		if (paused) {
 			if (leftbutt) {
 				if (leftgo.transform.rotation.eulerAngles.y > pauseRotation.eulerAngles.y) {
-					deselect ();
+					deselect (top.gameObject);
 					top.Select ();
 					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
 						topLoad ();
 					}
 				} else {
-					deselect ();
+					deselect (bot.gameObject);
 					bot.Select ();
 					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
 						botLoad ();
@@ -63,13 +65,13 @@ public class menu : MonoBehaviour {
 					
 			} else{
 				if (rightgo.transform.rotation.eulerAngles.y > pauseRotation.eulerAngles.y) {
-					deselect ();
+					deselect (top.gameObject);
 					top.Select ();
 					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
 						topLoad ();
 					}
 				} else {
-					deselect ();
+					deselect (bot.gameObject);
 					bot.Select ();
 					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
 						botLoad ();
@@ -99,8 +101,10 @@ public class menu : MonoBehaviour {
 //		if(top.is
 //	}
 
-	void deselect(){
-		myEventSystem.SetSelectedGameObject (null);
+	void deselect(GameObject current){
+		if (myEventSystem.currentSelectedGameObject != current) {
+			myEventSystem.SetSelectedGameObject (null);
+		}
 	}
 
 	//what the top button does
