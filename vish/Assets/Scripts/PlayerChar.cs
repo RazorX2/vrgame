@@ -51,17 +51,16 @@ public class PlayerChar : MonoBehaviour {
         }
         if(spawnEnd && GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)//After spawning has ended and you killed all of the enemies
         {
-            Debug.Log("Level End Trigger");
+            //Debug.Log("Level End Trigger");
             levelEnd = true;
             GameObject[] shooters = GameObject.FindGameObjectsWithTag("Shooter");//Close ability to shoot
             for (int i = 0; i < shooters.Length; i++)
                 shooters[i].GetComponent<basic_shoot>().TurnOff();
             Losingscreen.text = "Level "+level+" completed\nPress both triggers to start next level";
-            Debug.Log(levelStarted);
             if (left.GetPress(SteamVR_Controller.ButtonMask.Trigger) && right.GetPress(SteamVR_Controller.ButtonMask.Trigger))//if both triggers are pulled start next level
             {
                 count += 1;
-                Debug.Log("Trigger Pressed");
+                //Debug.Log("Trigger Pressed");
                 if (count > 5)
                 {
                     levelStarted = true;
@@ -74,7 +73,7 @@ public class PlayerChar : MonoBehaviour {
         }
         if (spawnEnd && levelEnd && levelStarted)//After you ask to start the next level
         {
-            Debug.Log("New Level Trigger");
+            //Debug.Log("New Level Trigger");
             Losingscreen.text = "";
             currOdds = (int)(30 - (30 - currOdds * .9));
             GameObject[] spawner = GameObject.FindGameObjectsWithTag("Spawner");
@@ -97,7 +96,7 @@ public class PlayerChar : MonoBehaviour {
         /********End Game Scenerio****************/
         if (health <= 0)
         {
-            Debug.Log("Death triggered");
+            //Debug.Log("Death triggered");
             GameObject[] spawner = GameObject.FindGameObjectsWithTag("Spawner");
             GameObject[] shooters = GameObject.FindGameObjectsWithTag("Shooter");
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

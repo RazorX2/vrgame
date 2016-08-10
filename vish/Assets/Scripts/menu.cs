@@ -28,7 +28,7 @@ public class menu : MonoBehaviour {
 		SteamVR_Controller.Device right = SteamVR_Controller.Input(4);
 
 		//menu on button hold, save initial controller rotation, always spawn menu in front @  2/3 height
-		if ((left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu)) && !paused) {
+		if ((left.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu)) && !paused) {
 			pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? left.transform.rot : right.transform.rot;
 			leftbutt = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? true : false;
 
@@ -40,7 +40,7 @@ public class menu : MonoBehaviour {
 
 			Time.timeScale = 0;
 			paused = true;
-		} else if ((left.GetPressUp (SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPressUp (SteamVR_Controller.ButtonMask.ApplicationMenu)) && paused) {
+		} else if ((left.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu)) && paused) {
 			Time.timeScale = 1;
 			menuscreen.SetActive (false);
 			paused = false;
@@ -76,25 +76,26 @@ public class menu : MonoBehaviour {
             }
             else
             {
-                if (right.transform.rot.eulerAngles.x > 0 && right.transform.rot.eulerAngles.x < 90)
+                if (right.transform.rot.eulerAngles.x > 270 && right.transform.rot.eulerAngles.x < 360)
                 {
                     Debug.Log("right tilted up");
-                    deselect(top.gameObject);
-                    top.Select();
+                    deselect(bot.gameObject);
+                    bot.Select();
                     if (right.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
                     {
-                        botLoad();
+                        topLoad();
                     }
-                    else if (right.transform.rot.eulerAngles.x > 270 && right.transform.rot.eulerAngles.x < 360)
-                    {
-                        deselect(bot.gameObject);
-                        Debug.Log("right tilted down");
-                        bot.Select();
-                        if (right.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
-                            topLoad();
-                    }
-
                 }
+                else if (right.transform.rot.eulerAngles.x > 0 && right.transform.rot.eulerAngles.x < 90)
+                {
+                    deselect(top.gameObject);
+                    Debug.Log("right tilted down");
+                    top.Select();
+                    if (right.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+                        botLoad();
+                }
+
+                
             }
         }
 	}
