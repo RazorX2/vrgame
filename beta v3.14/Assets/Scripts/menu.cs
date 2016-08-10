@@ -1,27 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class menu : MonoBehaviour {
-	public bool paused;
+	private bool paused;
+	private bool leftbutt;
+	private Quaternion pauseRotation;
 	private GameObject menuscreen;
+	private EventSystem myEventSystem;
+	public Button top;
+	public Button bot;
+	public GameObject leftgo;
+	public GameObject rightgo;
 
 	void Start () {
 		paused = false;
 		menuscreen = GameObject.FindGameObjectWithTag ("Menu");
 		menuscreen.SetActive (false);
+		myEventSystem = GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem> ();
 	}
 	
-	// Toggles pause menu and world freeze on either controller's menu press.
+	// pauses menu and world freeze on either controller's menu press.
 	void Update () {
 		SteamVR_Controller.Device left = SteamVR_Controller.Input(3);
 		SteamVR_Controller.Device right = SteamVR_Controller.Input(4);
 
-		//menu on button hold
+		//menu on button hold, save initial controller rotation, always spawn menu in front @  2/3 height
 		if ((left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu)) && !paused) {
+			pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? leftgo.transform.rotation : rightgo.transform.rotation;
+			leftbutt = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? true : false;
 			menuscreen.SetActive (true);
 			menuscreen.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
 			GameObject controls = menuscreen.transform.Find ("controls").gameObject;
 			controls.transform.position = new Vector3(controls.transform.position.x, transform.position.y * 2f / 3, controls.transform.position.z);
+			controls.transform.rotation = Quaternion.Euler(controls.transform.rotation.x, transform.rotation.y, controls.transform.rotation.z);
 			Time.timeScale = 0;
 			paused = true;
 		} else if ((left.GetPressUp (SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPressUp (SteamVR_Controller.ButtonMask.ApplicationMenu)) && paused) {
@@ -30,11 +44,39 @@ public class menu : MonoBehaviour {
 			paused = false;
 		}
 
-		//highlight buttons using raycast?
-//		if (paused) {
-//			if (left) {
-//			}
-//		}
+//		highlight buttons using y-rotation angle of controller whose button is down
+		if (paused) {
+			if (leftbutt) {
+				if (leftgo.transform.rotation.eulerAngles.y > pauseRotation.eulerAngles.y) {
+					deselect ();
+					top.Select ();
+					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
+						topLoad ();
+					}
+				} else {
+					deselect ();
+					bot.Select ();
+					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
+						botLoad ();
+					}
+				}
+					
+			} else{
+				if (rightgo.transform.rotation.eulerAngles.y > pauseRotation.eulerAngles.y) {
+					deselect ();
+					top.Select ();
+					if (left.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
+						topLoad ();
+					}
+				} else {
+					deselect ();
+					bot.Select ();
+					if (right.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) {
+						botLoad ();
+					}
+				}
+			}
+		}
 		
 
 		//toggles menu on press
@@ -51,5 +93,23 @@ public class menu : MonoBehaviour {
 //				paused = true;
 //			}
 //		}
+	}
+
+//	void LateUpdate(){
+//		if(top.is
+//	}
+
+	void deselect(){
+		myEventSystem.SetSelectedGameObject (null);
+	}
+
+	//what the top button does
+	void topLoad(){
+		SceneManager.LoadScene (1);
+	}
+
+	//what the bottom button does
+	void botLoad(){
+		Application.Quit ();
 	}
 }
