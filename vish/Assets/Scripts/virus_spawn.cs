@@ -54,6 +54,7 @@ public class virus_spawn : MonoBehaviour {
 			nextvirus.transform.position = Vector3.Scale(position,(Vector3.right+Vector3.forward));//Places it at the spawnpoint
 			nextvirus.transform.rotation = rotation;//Orients it properly
 			nextvirus.AddComponent<Rigidbody> ();
+            nextvirus.GetComponent<Rigidbody>().useGravity = true;
 			nextvirus.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 			nextvirus.AddComponent <virus_tracking> ();
             /*****Spawning**********************/

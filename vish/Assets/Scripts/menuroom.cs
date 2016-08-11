@@ -18,6 +18,7 @@ public class menuroom : MonoBehaviour {
 	void Start () {
 		paused = false;
 		menuscreen = GameObject.FindGameObjectWithTag ("Menu");
+        Time.timeScale = 1;
 		menuscreen.SetActive (false);
 		myEventSystem = GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem> ();
 	}
@@ -69,6 +70,9 @@ public class menuroom : MonoBehaviour {
                     bot.Select();
                     if (left.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
                     {
+                        Time.timeScale = 1;
+                        menuscreen.SetActive(false);
+                        paused = false;
                         topLoad();
                     }
                 }

@@ -21,6 +21,9 @@ public class PlayerChar : MonoBehaviour {
     public Text healthcount;
     int count;
     private GameObject spawnr;
+    private int currKill;
+    public Text kills;
+    private int maxCurrK;
     // Use this for initialization
     void Start () {
         maxhealth = 100;
@@ -33,15 +36,24 @@ public class PlayerChar : MonoBehaviour {
         count = 0;
         spawnr = GameObject.FindGameObjectWithTag("Spawner");
         spawnr.GetComponent<virus_spawn>().changeOdds(currOdds);
+        currKill = 0;
+        maxCurrK = 5;
+        GameObject[] spawner = GameObject.FindGameObjectsWithTag("Spawner");
+        GameObject[] shooters = GameObject.FindGameObjectsWithTag("Shooter");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemies");
+        for (int i = 0; i < shooters.Length; i++)
+            shooters[i].GetComponent<basic_shoot>().TurnOn();
+        for (int i = 0; i < spawner.Length; i++)
+            spawner[i].GetComponent<virus_spawn>().TurnOn();
 
 
-    }
+        }
 
 	// Update is called once per frame
 	void Update () {
         /************Level Creation****************/
         timer -= Time.deltaTime;
-        if(timer <= 0&&!spawnEnd)//if One Minute has passed
+        if(maxCurrK<=currKill&&!spawnEnd)//if One Minute has passed
         {
             Debug.Log("Time Trigger");
             Debug.Log(GameObject.FindGameObjectsWithTag("Enemy").Length + " Enemies Left");
@@ -70,6 +82,8 @@ public class PlayerChar : MonoBehaviour {
                 //Debug.Log("Trigger Pressed");
                 if (count > 5)
                 {
+                    currKill = 0;
+                    maxCurrK = maxCurrK + (int)(.9*(40 - maxCurrK));
                     levelStarted = true;
                     level += 1;
                     count = 0;
@@ -132,6 +146,8 @@ public class PlayerChar : MonoBehaviour {
     public void updateKills()
     {
         killCount++;
+        currKill++;
+        kills.text = "Kills: " + killCount;
     }
     public int hit(int power)
     {
