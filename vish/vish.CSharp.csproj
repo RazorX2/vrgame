@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\kamikaze.cs" />
     <Compile Include="Assets\Scripts\menu.cs" />
     <Compile Include="Assets\Scripts\menu_raycast.cs" />
+    <Compile Include="Assets\Scripts\menuroom.cs" />
     <Compile Include="Assets\Scripts\mesh_collider_for_objects.cs" />
     <Compile Include="Assets\Scripts\movetest.cs" />
     <Compile Include="Assets\Scripts\right_trigger_test.cs" />
