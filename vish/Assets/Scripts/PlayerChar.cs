@@ -133,8 +133,8 @@ public class PlayerChar : MonoBehaviour {
 
             if (left.GetPress(SteamVR_Controller.ButtonMask.Trigger) && right.GetPress(SteamVR_Controller.ButtonMask.Trigger))
             {
-                count++;
-                if (count > 5)
+                //count++;
+                //if (count > 5)
                 {
                     Debug.Log("both triggers down");
                     SceneManager.LoadScene(0);
