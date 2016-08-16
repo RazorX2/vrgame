@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        maxhealth = 100;
         health = maxhealth;
     }
 

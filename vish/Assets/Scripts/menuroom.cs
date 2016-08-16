@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class menuroom : MonoBehaviour {
 	private bool paused;
 	private bool leftbutt;
-	private Quaternion pauseRotation;
+	//private Quaternion pauseRotation;
 	private GameObject menuscreen;
 	private EventSystem myEventSystem;
 	public Button top;
@@ -20,7 +20,7 @@ public class menuroom : MonoBehaviour {
 		menuscreen = GameObject.FindGameObjectWithTag ("Menu");
         Time.timeScale = 1;
 		menuscreen.SetActive (false);
-		myEventSystem = GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem> ();
+		myEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem> ();
 	}
 	
 	// pauses menu and world freeze on either controller's menu press.
@@ -30,7 +30,7 @@ public class menuroom : MonoBehaviour {
 
 		//menu on button hold, save initial controller rotation, always spawn menu in front @  2/3 height
 		if ((left.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu)) && !paused) {
-			pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? left.transform.rot : right.transform.rot;
+			//pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? left.transform.rot : right.transform.rot;
 			leftbutt = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? true : false;
 
 			menuscreen.SetActive (true);

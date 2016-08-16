@@ -11,8 +11,10 @@ public class virus_spawn : MonoBehaviour {
     private int rperson;
     private GameObject enemy;
     private int odds;
+    private int spawnNum;
     void Start () {
-        children = new Transform[4];
+        spawnNum = transform.childCount;
+        children = new Transform[spawnNum];
         int count = 0;
         odds = 1;
         foreach (Transform child in transform)
@@ -27,9 +29,9 @@ public class virus_spawn : MonoBehaviour {
         odds = x;
     }
 	IEnumerator activatePoints(){
-		for(int i = 0;i<4;i++) {
+		for(int i = 0;i<spawnNum;i++) {
             StartCoroutine (spawnViruses(delay)    );
-			yield return new WaitForSeconds (delay/transform.childCount);
+			yield return new WaitForSeconds (delay/spawnNum);
 		}
 	}
 
@@ -37,7 +39,7 @@ public class virus_spawn : MonoBehaviour {
 		while (true) {
             /*****Randomization****************/
             Debug.Log("Spawned one");
-            rperson = (int)(Random.value * 4);
+            rperson = (int)(Random.value * spawnNum);
             Transform child = children[rperson];
             //Debug.Log("point: " + rperson);
             rperson = (int)(Random.value * 20);
@@ -53,7 +55,7 @@ public class virus_spawn : MonoBehaviour {
             nextvirus.tag = "Enemy";//Tags it
 			nextvirus.transform.position = Vector3.Scale(position,(Vector3.right+Vector3.forward));//Places it at the spawnpoint
 			nextvirus.transform.rotation = rotation;//Orients it properly
-			nextvirus.AddComponent<Rigidbody> ();
+			//nextvirus.AddComponent<Rigidbody> ();
             nextvirus.GetComponent<Rigidbody>().useGravity = true;
 			nextvirus.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 			nextvirus.AddComponent <virus_tracking> ();

@@ -40,7 +40,6 @@ public class PlayerChar : MonoBehaviour {
         maxCurrK = 5;
         GameObject[] spawner = GameObject.FindGameObjectsWithTag("Spawner");
         GameObject[] shooters = GameObject.FindGameObjectsWithTag("Shooter");
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemies");
         for (int i = 0; i < shooters.Length; i++)
             shooters[i].GetComponent<basic_shoot>().TurnOn();
         for (int i = 0; i < spawner.Length; i++)

@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class menu : MonoBehaviour {
 	private bool paused;
 	private bool leftbutt;
-	private Quaternion pauseRotation;
+	//private Quaternion pauseRotation;
 	private GameObject menuscreen;
 	private EventSystem myEventSystem;
 	public Button top;
@@ -29,7 +29,7 @@ public class menu : MonoBehaviour {
 
 		//menu on button hold, save initial controller rotation, always spawn menu in front @  2/3 height
 		if ((left.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu) || right.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu)) && !paused) {
-			pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? left.transform.rot : right.transform.rot;
+			//pauseRotation = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? left.transform.rot : right.transform.rot;
 			leftbutt = left.GetPress (SteamVR_Controller.ButtonMask.ApplicationMenu) ? true : false;
 
 			menuscreen.SetActive (true);
