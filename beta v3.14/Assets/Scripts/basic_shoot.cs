@@ -8,11 +8,11 @@ public class basic_shoot : MonoBehaviour {
 
 	private GameObject projectile;
 	public float multiplier;
-	private AudioClip whoosh;
+	public AudioClip whoosh;
 	// Use this for initialization
 	void Awake () {
 		projectile = GameObject.FindGameObjectWithTag ("Weapon");
-		whoosh = Resources.Load ("Audio/metallic swish.mp3") as AudioClip;
+		//whoosh = Resources.Load ("Audio/metallic swish") as AudioClip;
 	}
 
 	// Update is called once per frame

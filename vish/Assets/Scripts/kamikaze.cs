@@ -5,8 +5,9 @@ public class kamikaze : MonoBehaviour {
     public int power;
     private int health;
     public GameObject Player;
-	// Use this for initialization
-	void Start () {
+    public AudioClip dead;
+    // Use this for initialization
+    void Start () {
 
 	}
 
@@ -17,6 +18,7 @@ public class kamikaze : MonoBehaviour {
             if (health <= 0)
             {
                 Player.GetComponent<PlayerChar>().updateKills();
+                AudioSource.PlayClipAtPoint(dead, c.gameObject.transform.position);
                 Destroy(c.gameObject);
             }
             Destroy(transform.gameObject);
