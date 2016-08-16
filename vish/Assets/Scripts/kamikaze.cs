@@ -6,9 +6,10 @@ public class kamikaze : MonoBehaviour {
     private int health;
     public GameObject Player;
     public AudioClip dead;
+//	public virus_spawn spawn;
     // Use this for initialization
     void Start () {
-
+//		spawn = GameObject.FindGameObjectWithTag ("Spawner").GetComponent<virus_spawn> ();
 	}
 
 	void OnCollisionEnter(Collision c){     // if an enemy collides with me, it dies.
@@ -20,6 +21,9 @@ public class kamikaze : MonoBehaviour {
                 Player.GetComponent<PlayerChar>().updateKills();
                 AudioSource.PlayClipAtPoint(dead, c.gameObject.transform.position);
                 Destroy(c.gameObject);
+//				if (spawn.bossSpawned) {
+//					spawn.gameObject.SetActive (true);
+//				}
             }
             Destroy(transform.gameObject);
         }

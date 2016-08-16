@@ -12,6 +12,7 @@ public class virus_spawn : MonoBehaviour {
     private GameObject enemy;
     private int odds;
     private int spawnNum;
+//	public bool bossSpawned = false;
     void Start () {
         spawnNum = transform.childCount;
         children = new Transform[spawnNum];
@@ -29,8 +30,9 @@ public class virus_spawn : MonoBehaviour {
         odds = x;
     }
 	IEnumerator activatePoints(){
+		Debug.Log ("points activated");
 		for(int i = 0;i<spawnNum;i++) {
-            StartCoroutine (spawnViruses(delay)    );
+            StartCoroutine (spawnViruses(delay));
 			yield return new WaitForSeconds (delay/spawnNum);
 		}
 	}
@@ -44,8 +46,10 @@ public class virus_spawn : MonoBehaviour {
             //Debug.Log("point: " + rperson);
             rperson = (int)(Random.value * 20);
             GameObject enemy = enemy1;
-            if (rperson <= odds)
-                enemy = enemy2;
+			if (rperson <= odds) {
+				enemy = enemy2;
+//				bossSpawned = true;
+			}
             //Debug.Log("Character:" + rperson);
             Vector3 position = child.position;
             Quaternion rotation = child.rotation;
@@ -59,6 +63,8 @@ public class virus_spawn : MonoBehaviour {
             nextvirus.GetComponent<Rigidbody>().useGravity = true;
 			nextvirus.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 			nextvirus.AddComponent <virus_tracking> ();
+//			if (bossSpawned)
+//				transform.gameObject.SetActive (false);
             /*****Spawning**********************/
             yield return new WaitForSeconds (delay);
 		}

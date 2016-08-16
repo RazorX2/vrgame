@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\FacePlayer.cs" />
      <Compile Include="Assets\Scripts\ParticaleAnimator.cs" />
      <Compile Include="Assets\Scripts\PlayerChar.cs" />
      <Compile Include="Assets\Scripts\basic_shoot.cs" />
@@ -54,7 +55,7 @@
      <Compile Include="Assets\Scripts\double_trigger_start.cs" />
      <Compile Include="Assets\Scripts\kamikaze.cs" />
      <Compile Include="Assets\Scripts\menu.cs" />
-     <Compile Include="Assets\Scripts\menu_raycast.cs" />
+     <Compile Include="Assets\Scripts\menuroom.cs" />
      <Compile Include="Assets\Scripts\mesh_collider_for_objects.cs" />
      <Compile Include="Assets\Scripts\movetest.cs" />
      <Compile Include="Assets\Scripts\right_trigger_test.cs" />
@@ -101,6 +102,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\plants\dd\AlphaTest-Bumped.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
