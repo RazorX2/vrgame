@@ -8,8 +8,9 @@ public class basic_shoot : MonoBehaviour {
 
 	private GameObject projectile;
 	public float multiplier;
-	// Use this for initialization
-	void Awake () {
+    public AudioClip whoosh;
+    // Use this for initialization
+    void Awake () {
 		projectile = GameObject.FindGameObjectWithTag ("Weapon");
 	}
 
@@ -19,7 +20,8 @@ public class basic_shoot : MonoBehaviour {
 			GameObject razor = Instantiate<GameObject> (projectile);
 			razor.transform.position = transform.position;
             razor.transform.rotation = transform.rotation * Quaternion.AngleAxis(-90f, Vector3.right);
-			Rigidbody razorbody = razor.GetComponent<Rigidbody> ();
+            AudioSource.PlayClipAtPoint(whoosh, razor.transform.position);
+            Rigidbody razorbody = razor.GetComponent<Rigidbody> ();
             razorbody.useGravity = true;
 			razorbody.AddForceAtPosition(transform.forward * multiplier*3,transform.position,ForceMode.Impulse);
 			razorbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;

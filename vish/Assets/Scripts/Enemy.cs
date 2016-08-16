@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
         if (c.gameObject.tag == "Player")
         {
             health = c.gameObject.GetComponent<PlayerChar>().hit(power);
+            Destroy(this.gameObject);
             
         }
     }

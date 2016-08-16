@@ -4,11 +4,10 @@ using System.Collections;
 public class kamikaze : MonoBehaviour {
     public int power;
     private int health;
-	private AudioClip dead;
+	public AudioClip dead;
     public GameObject Player;
 	// Use this for initialization
 	void Awake () {
-		dead = Resources.Load ("Audio/virus die.mp3") as AudioClip;
 	}
 
 	void OnCollisionEnter(Collision c){     // if an enemy collides with me, it dies.

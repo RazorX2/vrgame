@@ -79,14 +79,17 @@ public class PlayerChar : MonoBehaviour {
             if (left.GetPress(SteamVR_Controller.ButtonMask.Trigger) && right.GetPress(SteamVR_Controller.ButtonMask.Trigger))//if both triggers are pulled start next level
             {
                 count += 1;
-                //Debug.Log("Trigger Pressed");
+                Debug.Log("Trigger Pressed");
                 if (count > 5)
                 {
                     currKill = 0;
-                    maxCurrK = maxCurrK + (int)(.9*(40 - maxCurrK));
+                    maxCurrK = maxCurrK + (int)(.1*(80 - maxCurrK));
                     levelStarted = true;
                     level += 1;
                     count = 0;
+                    health = 100;
+                    healthBar.value = health;
+                    healthcount.text = "Health:" + health + "/100";
                 }
             }
             else
