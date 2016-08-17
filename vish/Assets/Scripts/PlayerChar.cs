@@ -24,8 +24,10 @@ public class PlayerChar : MonoBehaviour {
     private int currKill;
     public Text kills;
     private int maxCurrK;
+	public GameObject loseScreen;
     // Use this for initialization
     void Start () {
+		loseScreen.SetActive (false);
         maxhealth = 100;
         health = maxhealth;
         level = 1;
@@ -74,7 +76,7 @@ public class PlayerChar : MonoBehaviour {
             GameObject[] shooters = GameObject.FindGameObjectsWithTag("Shooter");//Close ability to shoot
             for (int i = 0; i < shooters.Length; i++)
                 shooters[i].GetComponent<basic_shoot>().TurnOff();
-            Losingscreen.text = "Level "+level+" completed\nPress both triggers to start next level";
+			Losingscreen.text = "Level "+level+" Completed\n[press both triggers to continue.]";
             if (left.GetPress(SteamVR_Controller.ButtonMask.Trigger) && right.GetPress(SteamVR_Controller.ButtonMask.Trigger))//if both triggers are pulled start next level
             {
                 count += 1;
@@ -131,7 +133,10 @@ public class PlayerChar : MonoBehaviour {
             for (int i = 0; i < enemies.Length; i++)
                 Destroy(enemies[i]);
 
-            Losingscreen.text = "You Got to level "+level+"\nEnemies Killed:" + killCount+"\nPress both triggers to go to home screen";
+			loseScreen.SetActive (true);
+			loseScreen.transform.position = new Vector3(transform.position.x + transform.forward.x, transform.position.y * 2f / 3, transform.position.z + transform.forward.z);
+			loseScreen.transform.rotation = Quaternion.Euler(30, transform.rotation.eulerAngles.y, loseScreen.transform.rotation.eulerAngles.z);
+			Losingscreen.text = "Level "+level+" Completed\n" + killCount+" Enemies Killed\n[press both triggers to go home.]";
 
             if (left.GetPress(SteamVR_Controller.ButtonMask.Trigger) && right.GetPress(SteamVR_Controller.ButtonMask.Trigger))
             {
