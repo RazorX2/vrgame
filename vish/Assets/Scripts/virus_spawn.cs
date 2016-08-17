@@ -12,9 +12,12 @@ public class virus_spawn : MonoBehaviour {
     private GameObject enemy;
     private int odds;
     private int spawnNum;
+
+	private int initSpawn = 0;
 //	public bool bossSpawned = false;
     void Start () {
         spawnNum = transform.childCount;
+		//Debug.Log (spawnNum);
         children = new Transform[spawnNum];
         int count = 0;
         odds = 1;
@@ -23,19 +26,27 @@ public class virus_spawn : MonoBehaviour {
             children[count] = child;
             count++;
         }
-        StartCoroutine(activatePoints());
+//        StartCoroutine(activatePoints());
+		//StartCoroutine(spawnViruses(delay/spawnNum));
 	}
     public void changeOdds(int x)
     {
         odds = x;
     }
-	IEnumerator activatePoints(){
-		Debug.Log ("points activated");
-		for(int i = 0;i<spawnNum;i++) {
-            StartCoroutine (spawnViruses(delay));
-			yield return new WaitForSeconds (delay/spawnNum);
-		}
-	}
+//	IEnumerator activatePoints(){
+//		while (initSpawn < 5) {
+//			Debug.Log ("points activated");
+//			StartCoroutine (spawnViruses (delay));
+//			initSpawn++;
+//			yield return new WaitForSeconds (delay / spawnNum);
+//		}
+//////		for(int i = 0;i<spawnNum;i++) {
+//////			Debug.Log ("points activated");
+//////            StartCoroutine (spawnViruses(delay));
+//////			//yield return new WaitForSeconds (delay/spawnNum);
+//////			yield new WaitForSeconds(delay/spawnNum);
+//////		}
+//	}
 
 	IEnumerator spawnViruses(float delay){
 		while (true) {
@@ -80,7 +91,7 @@ public class virus_spawn : MonoBehaviour {
     }
     public void TurnOn()
     {
-        StartCoroutine(activatePoints());
+		StartCoroutine(spawnViruses(delay/spawnNum));
         enabled = true;
     }
 }

@@ -20,7 +20,7 @@ public class menuroom : MonoBehaviour {
 		menuscreen = GameObject.FindGameObjectWithTag ("Menu");
         Time.timeScale = 1;
 		menuscreen.SetActive (false);
-		myEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem> ();
+		myEventSystem = GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem> ();
 	}
 	
 	// pauses menu and world freeze on either controller's menu press.
