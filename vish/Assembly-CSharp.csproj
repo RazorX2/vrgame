@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\movetest.cs" />
      <Compile Include="Assets\Scripts\right_trigger_test.cs" />
      <Compile Include="Assets\Scripts\throw_physics.cs" />
+     <Compile Include="Assets\Scripts\tutorial.cs" />
      <Compile Include="Assets\Scripts\virus_spawn.cs" />
      <Compile Include="Assets\Scripts\virus_tracking.cs" />
      <Compile Include="Assets\Scripts\weapon_kill.cs" />
